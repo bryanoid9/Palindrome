@@ -1,0 +1,60 @@
+// Bryan Martinez Ramirez
+// Cal Poly Pomona
+
+
+import java.util.Scanner;
+public class PalindromeTester
+{
+   public static void main(String[] args)
+   {
+    Scanner keyboard = new Scanner(System.in);
+    String input = "";
+    int numberofPalindromes = 0;
+    while (true)
+   {
+    System.out.println("enter a word, phrase, or a sentence (blank line to stop):");
+    input = keyboard.nextLine();
+    if (input.equals(""))
+   {
+    break;
+   }
+    String processedInput = "";
+    int i = 0;
+    while (i < input.length())
+   {
+    char c = input.charAt(i);
+    if ( Character.isLetter(c))
+   {
+    processedInput = processedInput + c;
+   }
+   i++;
+   }
+
+    boolean isPalindrome = true;
+    i = 0;
+    while (i < processedInput.length() / 2)
+   {
+    char cFromLeft = processedInput.charAt(i);
+    char cFromRight = processedInput.charAt(processedInput.length() - 1 - i);
+    if (cFromLeft != cFromRight)
+   {
+          isPalindrome = false;
+          break;
+   }
+   i++;
+   }
+  if (isPalindrome)
+   {
+    System.out.println("palindrome\n");
+    numberofPalindromes++;
+  }
+  else
+  {
+  }
+    System.out.println("Not a palindrome\n");
+  }
+
+  System.out.println("You found " + numberofPalindromes + " palindromes.");
+    System.out.println("Thank you for using PalindromeTester.");
+}
+
